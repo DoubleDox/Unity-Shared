@@ -1,0 +1,15 @@
+{
+  "name": "com.doubledox.shared",
+  "version": "1.0.0",
+  "displayName": "DoubleDox Unity Shared",
+  "description": "Common scripts",
+  "dependencies": { },
+ "keywords": [
+    "gamecore"
+  ],
+  "author": {
+    "name": "DoubleDox",
+    "email": "parax_85@mail.ru",
+    "url": "https://doubledox.com"
+  }
+}
