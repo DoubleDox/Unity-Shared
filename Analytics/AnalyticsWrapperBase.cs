@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿// -----------------------------------
+// author: DoubleDox, parax_85@mail.ru
+// -----------------------------------
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
