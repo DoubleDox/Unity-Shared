@@ -27,7 +27,16 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
     }
 
     protected abstract void sendEvent(string eventType, Dictionary<string,object> data = null);
-    
+
+
+    public static void SendEvent(string eventType, Dictionary<string, string> data)
+    {
+        var dataObj = new Dictionary<string, object>();
+        foreach (var kvp in data)
+            dataObj.Add(kvp.Key, kvp.Value);
+        SendEvent(eventType, dataObj);
+    }
+
     public static void SendEvent(string eventType, Dictionary<string, object> data = null)
     {
         foreach (var wr in wrappers)
