@@ -14,6 +14,9 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
     public delegate void AnalyticsDataProcessor(Dictionary<string, object> data);
 
     public static AnalyticsDataProcessor DataPreProcessor { get; set; }
+    
+    [SerializeField]
+    private AnalyticsEventMap[] eventsMap;
 
     protected virtual void Awake()
     {
@@ -43,11 +46,23 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
 
     public static void SendEvent(string eventType, Dictionary<string, object> data = null)
     {
-        if (DataPreProcessor != null)
-            DataPreProcessor(data);
+        DataPreProcessor?.Invoke(data);
 
         foreach (var wr in wrappers)
-            wr.sendEvent(eventType, data);
+        {
+            string platformBasedEvent = eventType;
+            if (wr.eventsMap != null)
+            {
+                for (int i = 0; i < wr.eventsMap.Length; i++)
+                    if (wr.eventsMap[i].source == eventType)
+                    {
+                        platformBasedEvent = wr.eventsMap[i].send;
+                    }
+            }
+
+            if (!string.IsNullOrEmpty(platformBasedEvent))
+                wr.sendEvent(platformBasedEvent, data);
+        }
     }
 
     public static void OnLogin(string uid)
@@ -56,4 +71,11 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
         foreach (var wr in wrappers)
             wr.onLogin();
     }
+}
+
+[System.Serializable]
+public class AnalyticsEventMap
+{
+    public string source;
+    public string send;
 }
