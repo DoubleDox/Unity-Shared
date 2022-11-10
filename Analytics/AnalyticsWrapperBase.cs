@@ -11,6 +11,10 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
 
     protected static string userId;
 
+    public delegate void AnalyticsDataProcessor(Dictionary<string, object> data);
+
+    public static AnalyticsDataProcessor DataProcessor { get; set; }
+
     protected virtual void Awake()
     {
         wrappers.Add(this);
@@ -39,6 +43,9 @@ public abstract class AnalyticsWrapperBase : MonoBehaviour
 
     public static void SendEvent(string eventType, Dictionary<string, object> data = null)
     {
+        if (DataProcessor != null)
+            DataProcessor(data);
+
         foreach (var wr in wrappers)
             wr.sendEvent(eventType, data);
     }
