@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6] - 2022-11-14
+
+Added KeystoreAutoFiller
+
+## [1.0.5] - 2022-11-12
+
+Added SingletonLoader
+
 ## [1.0.4] - 2022-11-10
 
 ### Added
