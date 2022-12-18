@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.7] - 2022-12-18
+
+Added UIDebugInfo
+
 ## [1.0.6] - 2022-11-14
 
 Added KeystoreAutoFiller
