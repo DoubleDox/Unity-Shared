@@ -45,6 +45,7 @@ public class UIDebugInfo : MonoBehaviour
         if (!holders.ContainsKey(key))
         {
             var inst = GameObjectUtils.AddChild(template.gameObject);
+            inst.transform.localRotation = Quaternion.identity;
             holders.Add(key, inst.GetComponent<Text>());
             lastUpdate.Add(key, Time.time);
         }
@@ -56,15 +57,7 @@ public class UIDebugInfo : MonoBehaviour
         {
             instance.CheckCreate(key);
             instance.holders[key].text = key + ": " + value.ToString();
-        }
-    }
-
-    public static void Show(string key, int value)
-    {
-        if (instance != null)
-        {
-            instance.CheckCreate(key);
-            instance.holders[key].text = key + ": " + value.ToString();
+            instance.lastUpdate[key] = Time.time;
         }
     }
 }
