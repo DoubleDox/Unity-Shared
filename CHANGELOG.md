@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.8] - 2023-02-22
+
+Added ActorParamsModifiers
+Added GameEventHandler
+
 ## [1.0.7] - 2022-12-18
 
 Added UIDebugInfo
