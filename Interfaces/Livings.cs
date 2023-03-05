@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ILivingActor
 {
-
+    bool IsAlive { get; }
 }
 
 public interface ILivingDeathHandler
