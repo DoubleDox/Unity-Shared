@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.10] - 2023-03-06
+
+Added StringsList
+
+## [1.0.9] - 2023-02-23
+
+Added interfaces for livings, inventory and weapons
+
 ## [1.0.8] - 2023-02-22
 
 Added ActorParamsModifiers
