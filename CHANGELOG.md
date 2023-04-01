@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.11] - 2023-04-01
+
+Added AssetLoaderBase for implementing custom loaders (bundle loaders, for expample)
+
 ## [1.0.10] - 2023-03-06
 
 Added StringsList
