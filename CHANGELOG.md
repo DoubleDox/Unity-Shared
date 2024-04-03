@@ -1,8 +1,12 @@
 # Changelog
 
+## [1.0.12] - 2024-04-03
+
+Added FrameLimiter
+
 ## [1.0.11] - 2023-04-01
 
-Added AssetLoaderBase for implementing custom loaders (bundle loaders, for expample)
+Added AssetLoaderBase for implementing custom loaders (bundle loaders, for example)
 
 ## [1.0.10] - 2023-03-06
 
