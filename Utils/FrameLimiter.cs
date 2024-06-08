@@ -6,6 +6,7 @@ public class FrameLimiter : MonoBehaviour
 	private int targetFrameRate = 60;
 
 	private int prevFrameRate;
+	private int prevVSyncCount;
 
 	private void Awake()
 	{
@@ -14,23 +15,16 @@ public class FrameLimiter : MonoBehaviour
 
 	private void Set()
 	{
-#if UNITY_STANDALONE_WIN
 		prevFrameRate = Application.targetFrameRate;
-        Application.targetFrameRate = targetFrameRate;
-#else
-		prevFrameRate = QualitySettings.vSyncCount;
-		QualitySettings.vSyncCount = targetFrameRate;
-#endif
-
+		Application.targetFrameRate = targetFrameRate;
+		prevVSyncCount = QualitySettings.vSyncCount;
+		QualitySettings.vSyncCount = 0;
 	}
 
 	private void OnDestroy()
 	{
-#if UNITY_STANDALONE_WIN
-        Application.targetFrameRate = prevFrameRate;
-#else
-		QualitySettings.vSyncCount = prevFrameRate;
-#endif
+		Application.targetFrameRate = prevFrameRate;
+		QualitySettings.vSyncCount = prevVSyncCount;
 	}
 
 #if UNITY_EDITOR
