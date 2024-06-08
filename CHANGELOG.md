@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.13] - 2024-06-08
+
+Added FrameCounter
+
 ## [1.0.12] - 2024-04-03
 
 Added FrameLimiter
