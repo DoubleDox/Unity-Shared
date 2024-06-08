@@ -1,24 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FrameLimiter : MonoBehaviour
-{ 
-    [SerializeField]
-    private int targetFrameRate = 60;
+{
+	[SerializeField]
+	private int targetFrameRate = 60;
 
-    private void Awake()
-    {
+	private int prevFrameRate;
+
+	private void Awake()
+	{
+		Set();
+	}
+
+	private void Set()
+	{
+#if UNITY_STANDALONE_WIN
+		prevFrameRate = Application.targetFrameRate;
         Application.targetFrameRate = targetFrameRate;
-    }
+#else
+		prevFrameRate = QualitySettings.vSyncCount;
+		QualitySettings.vSyncCount = targetFrameRate;
+#endif
 
-    private void OnDestroy()
-    {
-        Application.targetFrameRate = 0;
-    }
+	}
 
-    private void OnValidate()
-    {
-        Application.targetFrameRate = targetFrameRate;
-    }
+	private void OnDestroy()
+	{
+#if UNITY_STANDALONE_WIN
+        Application.targetFrameRate = prevFrameRate;
+#else
+		QualitySettings.vSyncCount = prevFrameRate;
+#endif
+	}
+
+#if UNITY_EDITOR
+	private void OnValidate()
+	{
+		Set();
+	}
+#endif
 }
