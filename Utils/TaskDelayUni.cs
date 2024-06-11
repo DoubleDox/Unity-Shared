@@ -18,7 +18,7 @@ public static class TaskDelayUni
 #if !UNITY_WEBGL
         await Task.Delay(Mathf.RoundToInt(seconds * 1000));
 #else
-        await WaitWebgl(seconds);
+        await DelayWebGL(seconds);
 #endif
 	}
 }
