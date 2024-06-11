@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class TaskDelayUni
 {
-    public static async Task WaitWebgl(float seconds)
+    public static async Task DelayWebGL(float seconds)
     {
         float start = Time.time;
 
@@ -13,7 +13,7 @@ public static class TaskDelayUni
             await Task.Yield();
     }
 
-    public static async Task WaitUni(float seconds)
+    public static async Task Delay(float seconds)
     {
 #if !UNITY_WEBGL
         await Task.Delay(Mathf.RoundToInt(seconds * 1000));
