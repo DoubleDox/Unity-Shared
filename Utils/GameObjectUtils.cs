@@ -29,6 +29,7 @@ public static class GameObjectUtils
         inst.transform.SetParent(parent ?? template.transform.parent);
         inst.transform.localScale = template.transform.localScale;
         inst.transform.localPosition = template.transform.localPosition;
+        inst.transform.localRotation = template.transform.localRotation;
         inst.SetActive(true);
         return inst;
     }
