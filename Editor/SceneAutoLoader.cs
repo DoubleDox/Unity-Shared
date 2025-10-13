@@ -5,6 +5,12 @@ using UnityEditor.SceneManagement;
 [InitializeOnLoad]
 static class SceneAutoLoader
 {
+    static SceneAutoLoader()
+    {
+        if (LoadMasterOnPlay && !string.IsNullOrEmpty(MasterScene))
+            enableAutoLoad();
+    }
+
     [MenuItem("File/Scene Autoload/Select Master Scene...")]
     private static void SelectMasterScene()
     {
