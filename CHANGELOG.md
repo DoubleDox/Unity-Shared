@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.15] - 2025-10-13
+Added TaskDelayUni for WebGL delays
+
+## [1.0.14] - 2024-06-24
+GameObjectUtils - now set rotation
+Added PanelsStack
+Added FXManagerBase
+
 ## [1.0.13] - 2024-06-08
 
 Added FrameCounter
