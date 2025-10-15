@@ -10,7 +10,7 @@ static class SceneAutoLoader
         if (LoadMasterOnPlay && !string.IsNullOrEmpty(MasterScene))
             enableAutoLoad();
     }
-
+     
     [MenuItem("File/Scene Autoload/Select Master Scene...")]
     private static void SelectMasterScene()
     {

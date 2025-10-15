@@ -1,12 +1,16 @@
 # Changelog
 
+## [1.0.16] - 2025-10-15
+SceneAutoLoader fix on load
+Added LocalizationHandler (for unified localization solutions)
+
 ## [1.0.15] - 2025-10-13
-Added TaskDelayUni for WebGL delays
+Added FXManagerBase (for unified SFX and VFX solutions)
+Added PanelsStack
 
 ## [1.0.14] - 2024-06-24
+Added TaskDelayUni for WebGL delays
 GameObjectUtils - now set rotation
-Added PanelsStack
-Added FXManagerBase
 
 ## [1.0.13] - 2024-06-08
 
