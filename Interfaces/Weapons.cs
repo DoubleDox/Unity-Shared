@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IWeaponHolder
 {
-
+    public bool IsAttacking { get; }
 }
 
 public interface IWeaponElement
