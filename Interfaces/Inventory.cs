@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IInventoryHolder
 {
-
+	List<IItemElement> Items { get; }
 }
 
 public interface IItemElement

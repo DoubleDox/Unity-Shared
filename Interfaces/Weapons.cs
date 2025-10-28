@@ -4,7 +4,9 @@ using UnityEngine;
 
 public interface IWeaponHolder
 {
-    public bool IsAttacking { get; }
+    bool IsAttacking { get; }
+
+    IWeaponElement SelectedWeapon { get; set; }
 }
 
 public interface IWeaponElement
