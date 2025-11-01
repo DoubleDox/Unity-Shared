@@ -47,6 +47,17 @@ public abstract class AssetLoaderBase : MonoBehaviour, IAssetLoader
 		//return req.asset as GameObject;
 		return Load(path);
 	}
+
+	public static void SetLoader(IAssetLoader loader)
+	{
+		Instance = loader;
+	}
+
+	public static void UnsetLoader(IAssetLoader loader)
+	{
+		if (Instance == loader)
+			Instance = null;
+	}
 }
 
 public interface IAssetLoader
