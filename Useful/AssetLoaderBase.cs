@@ -1,9 +1,9 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class AssetLoaderBase : MonoBehaviour
+public abstract class AssetLoaderBase : MonoBehaviour, IAssetLoader
 {
-	public static AssetLoaderBase Instance { get; private set; }
+	public static IAssetLoader Instance { get; private set; }
 
 	public virtual GameObject LoadResource(string path)
 	{
@@ -25,7 +25,7 @@ public abstract class AssetLoaderBase : MonoBehaviour
 
 	protected virtual void OnDestroy()
 	{
-		if (Instance == this)
+		if (Instance as MonoBehaviour == this)
 			Instance = null;
 	}
 
@@ -47,4 +47,11 @@ public abstract class AssetLoaderBase : MonoBehaviour
 		//return req.asset as GameObject;
 		return Load(path);
 	}
+}
+
+public interface IAssetLoader
+{
+	GameObject LoadResource(string path);
+
+	Task<GameObject> LoadResourceAsync(string path);
 }
