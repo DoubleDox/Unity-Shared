@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class ShowIfAttribute : PropertyAttribute
@@ -13,7 +14,7 @@ public class ShowIfAttribute : PropertyAttribute
 		this.compareValue = compareValue;
 	}
 }
-
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ShowIfAttribute))]
 public class ShowIfDrawer : PropertyDrawer
 {
