@@ -1,6 +1,6 @@
 {
   "name": "com.doubledox.shared",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "displayName": "DoubleDox Unity Shared",
   "description": "Common scripts",
   "dependencies": {},

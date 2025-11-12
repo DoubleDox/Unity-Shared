@@ -23,4 +23,21 @@ public abstract class LocalizationHandler : MonoBehaviour
 			return instance.LocalizeKey(key);
 		return key;
 	}
+
+	public abstract string CurrentLocaleCode { get; }
+
+	public static string CurrentLocale
+	{
+		get
+		{
+			if (instance != null)
+				return instance.CurrentLocaleCode;
+			return "";
+		}
+	}
+}
+
+public interface ILocalizable
+{
+    void Localize();
 }
