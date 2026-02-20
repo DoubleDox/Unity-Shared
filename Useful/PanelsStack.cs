@@ -22,4 +22,9 @@ public static class PanelsStack
 	{
 		return stackablePanels[^1] == panel;
 	}
+
+	public static IStackablePanel GetTop()
+	{
+		return stackablePanels.Count > 0 ? stackablePanels[^1] : null;
+	}
 }
