@@ -11,3 +11,8 @@ public interface IResource
         return null;
     }
 }
+
+public interface IGameObjectProcessor
+{
+    void Process(GameObject go);
+}
