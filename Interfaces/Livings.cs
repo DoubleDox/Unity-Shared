@@ -25,3 +25,8 @@ public interface INonDestructableOnDeath
 
 }
 
+public interface ICountHolder
+{
+    int Count { get; }
+}
+
