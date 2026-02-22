@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public interface IResource
 {
@@ -15,4 +16,11 @@ public interface IResource
 public interface IGameObjectProcessor
 {
     void Process(GameObject go);
+}
+
+public interface IJsonStateHolder
+{
+    void StoreState(Dictionary<string, object> state);
+
+    void ReadState(Dictionary<string, object> state);
 }
