@@ -12,3 +12,9 @@ public interface IObserverGroup
 {
 
 }
+
+public interface IVisibilityHandler
+{
+    void OnVisibilityChange();
+}
+
