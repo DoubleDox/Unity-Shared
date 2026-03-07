@@ -6,3 +6,9 @@ public interface IModelHolder
 
     public Animator Animator { get; }
 }
+
+
+public interface IModelCreateHandler
+{
+    void OnModelCreated(GameObject view);
+}
