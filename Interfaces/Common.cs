@@ -24,3 +24,8 @@ public interface IJsonStateHolder
 
     void ReadState(Dictionary<string, object> state);
 }
+
+public interface IRadiusHolder
+{
+    float Radius { get; }
+}
