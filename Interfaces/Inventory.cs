@@ -4,10 +4,26 @@ using UnityEngine;
 
 public interface IInventoryHolder
 {
-	List<IItemElement> Items { get; }
+    public IReadOnlyList<IItemElement> Items { get; }
+
+    public T GetComponent<T>();
 }
 
 public interface IItemElement
 {
+    public int Count { get; }
+}
 
+// events raised ON ACTOR with item reference
+public interface IInventoryHolderHandler
+{
+    void OnItemHolderEvent(IItemElement item, InventoryHolderEvent eventType);
+}
+
+public enum InventoryHolderEvent
+{
+    None,
+    Add,
+    Remove,
+    SlotUpdate
 }
