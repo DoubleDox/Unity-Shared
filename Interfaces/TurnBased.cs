@@ -7,6 +7,8 @@ public interface ITurnBasedActor
 
     int AP { get; set; }
 
+    int CurrentMaxAP { get; }
+
     int GetMaxDist(string customCounter = null, bool canUseBase = true);
 
     int GetCustomAP(string customCounter, bool canUseBase);
