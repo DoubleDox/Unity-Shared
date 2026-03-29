@@ -29,3 +29,10 @@ public interface IRadiusHolder
 {
     float Radius { get; }
 }
+
+public interface IInputListener
+{
+    bool IsControllable { get; set; }
+
+    //int InputSlot { get; }
+}
