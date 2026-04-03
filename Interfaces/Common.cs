@@ -36,3 +36,10 @@ public interface IInputListener
 
     //int InputSlot { get; }
 }
+
+public interface IComponentHolder
+{
+    bool TryGetComponent<T>(out T value);
+
+    T GetComponent<T>();
+}

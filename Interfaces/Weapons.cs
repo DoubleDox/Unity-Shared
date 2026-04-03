@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IWeaponHolder
+public interface IWeaponHolder : IComponentHolder
 {
     bool IsAttacking { get; }
+
+    bool CanShoot { get; }
 
     IWeaponElement SelectedWeapon { get; set; }
 }
 
-public interface IWeaponElement
+public interface IWeaponElement : IComponentHolder
 {
     
 }
