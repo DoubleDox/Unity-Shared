@@ -50,11 +50,17 @@ public interface IRadiusHolder
     float Radius { get; }
 }
 
+// OBSOLETE?
 public interface IInputListener
 {
     bool IsControllable { get; set; }
 
     //int InputSlot { get; }
+}
+
+public interface IControllableProvider
+{
+    bool IsControllable { get; }
 }
 
 public interface IComponentHolder

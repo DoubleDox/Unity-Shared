@@ -9,9 +9,14 @@ public interface IInventoryHolder
     public T GetComponent<T>();
 }
 
-public interface IItemElement
+public interface IItemElement : IComponentHolder
 {
     public int Count { get; }
+}
+
+public interface IEffectElement
+{
+
 }
 
 // events raised ON ACTOR with item reference
