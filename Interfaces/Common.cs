@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public interface IResource
@@ -11,6 +12,25 @@ public interface IResource
             return r.Id;
         return null;
     }
+}
+
+public interface IStatHolder
+{
+    int Current { get; }
+    int Max { get; }
+    float Ratio => Max > 0 ? Current * 1.0f / Max : 0;
+    event Action<int, int> OnChanged;
+}
+
+public class StatProxy : IStatHolder
+{
+    private Func<int> _cur, _max;
+    public StatProxy(Func<int> c, Func<int> m) { _cur = c; _max = m; }
+    public int Current => _cur();
+    public int Max => _max();
+
+    public event Action<int, int> OnChanged;
+    public void NotifyChanged() => OnChanged?.Invoke(Current, Max);
 }
 
 public interface IGameObjectProcessor

@@ -3,6 +3,10 @@ using UnityEngine;
 public interface ILivingActor : IComponentHolder
 {
     bool IsAlive { get; }
+
+    IStatHolder Health { get; }
+
+    IStatHolder Armor { get; }
 }
 
 public struct LivingImpact
