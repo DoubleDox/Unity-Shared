@@ -6,7 +6,7 @@ public interface IMissionHolder
 
     int InternalID { get; }
 
-    void StoreProps(Dictionary<string, object> props);
+    void StoreProps(Dictionary<string, string> props);
 }
 
 public interface IMissionsPack
