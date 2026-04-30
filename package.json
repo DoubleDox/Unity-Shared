@@ -1,9 +1,8 @@
 {
   "name": "com.doubledox.shared",
-  "version": "1.0.29",
+  "version": "1.0.30",
   "displayName": "DoubleDox Unity Shared",
   "description": "Common scripts",
-  "dependencies": {},
   "keywords": [
     "gamecore"
   ],
