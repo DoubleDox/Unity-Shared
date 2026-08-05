@@ -23,6 +23,7 @@ public struct LivingImpact
     /// armed ammo in offender weapon
     /// </summary>
     public IItemElement ammo;
+    public IWeaponElement weapon;
     public IWeaponHolder offender;
 
     public bool checkOnly;
@@ -37,6 +38,7 @@ public struct LivingImpact
         hpDiff = _hpDiff;
         impact = impactType;
         ammo = null;
+        weapon = _offender != null ? _offender.SelectedWeapon : null;
         offender = _offender;
         checkOnly = false;
     }
